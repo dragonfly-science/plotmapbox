@@ -5,7 +5,8 @@
 #' @seealso \code{\link{ggmap}}
 
 readmaptile = function(map_info) {
-  map = try(readPNG(map_info$filename), silent = T)
+  #require(jpeg)
+  map = try(readJPEG(map_info$filename), silent = T)
   
   map <- apply(map, 2, rgb)
   map <- as.raster(map)
